@@ -11,9 +11,8 @@
     body { font-family: system-ui, sans-serif; }
     .nav-active { background-color: #1e40af; color: white; }
     .sidebar { transition: transform 0.3s ease-in-out; }
-    @media (max-width: 768px) {
-      .desktop-sidebar { display: none; }
-    }
+    .dashboard-card { transition: all 0.2s; }
+    .dashboard-card:hover { transform: translateY(-4px); }
   </style>
 </head>
 <body class="h-full bg-slate-950 text-white">
@@ -82,21 +81,36 @@
           <h1 class="text-5xl font-bold">Welcome back, Coach!</h1>
           <p class="text-slate-400 text-2xl mt-2">Bishop Miege Catholic High School Swim & Dive</p>
         </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 px-6">
-          <div onclick="showTab(2)" class="bg-slate-800 hover:bg-blue-600/10 rounded-3xl p-8 cursor-pointer card-hover border border-transparent hover:border-blue-400">
-            <div class="flex justify-between"><div><i class="fas fa-clipboard-check text-5xl text-blue-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Attendance</h3><p class="text-slate-400">Mark who showed up today</p></div><div class="text-right text-5xl font-bold text-blue-400/30">🏊</div></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+          <div onclick="showTab(2)" class="dashboard-card bg-slate-800 hover:bg-blue-600/10 rounded-3xl p-8 cursor-pointer border border-transparent hover:border-blue-400 flex flex-col h-full">
+            <div class="flex justify-between items-start">
+              <div><i class="fas fa-clipboard-check text-6xl text-blue-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Attendance</h3><p class="text-slate-400">Mark who showed up today</p></div>
+              <div class="text-6xl text-blue-400/20">🏊</div>
+            </div>
           </div>
-          <div onclick="showTab(1)" class="bg-slate-800 hover:bg-emerald-600/10 rounded-3xl p-8 cursor-pointer card-hover border border-transparent hover:border-emerald-400">
-            <div class="flex justify-between"><div><i class="fas fa-users text-5xl text-emerald-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Roster</h3><p class="text-slate-400">Add swimmers & view profiles</p></div><div class="text-right text-5xl font-bold text-emerald-400/30">📋</div></div>
+          <div onclick="showTab(1)" class="dashboard-card bg-slate-800 hover:bg-emerald-600/10 rounded-3xl p-8 cursor-pointer border border-transparent hover:border-emerald-400 flex flex-col h-full">
+            <div class="flex justify-between items-start">
+              <div><i class="fas fa-users text-6xl text-emerald-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Roster</h3><p class="text-slate-400">Manage swimmers & profiles</p></div>
+              <div class="text-6xl text-emerald-400/20">📋</div>
+            </div>
           </div>
-          <div onclick="showTab(4)" class="bg-slate-800 hover:bg-purple-600/10 rounded-3xl p-8 cursor-pointer card-hover border border-transparent hover:border-purple-400">
-            <div class="flex justify-between"><div><i class="fas fa-dumbbell text-5xl text-purple-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Workout Logs</h3><p class="text-slate-400">Warm-ups, kick, sprint, IM, etc.</p></div><div class="text-right text-5xl font-bold text-purple-400/30">🏋️</div></div>
+          <div onclick="showTab(4)" class="dashboard-card bg-slate-800 hover:bg-purple-600/10 rounded-3xl p-8 cursor-pointer border border-transparent hover:border-purple-400 flex flex-col h-full">
+            <div class="flex justify-between items-start">
+              <div><i class="fas fa-dumbbell text-6xl text-purple-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Workout Logs</h3><p class="text-slate-400">Warm-ups, kick, sprint, IM…</p></div>
+              <div class="text-6xl text-purple-400/20">🏋️</div>
+            </div>
           </div>
-          <div onclick="showTab(3)" class="bg-slate-800 hover:bg-amber-600/10 rounded-3xl p-8 cursor-pointer card-hover border border-transparent hover:border-amber-400">
-            <div class="flex justify-between"><div><i class="fas fa-calendar-xmark text-5xl text-amber-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Planned Absences</h3><p class="text-slate-400">Mark future misses</p></div><div class="text-right text-5xl font-bold text-amber-400/30">📅</div></div>
+          <div onclick="showTab(3)" class="dashboard-card bg-slate-800 hover:bg-amber-600/10 rounded-3xl p-8 cursor-pointer border border-transparent hover:border-amber-400 flex flex-col h-full">
+            <div class="flex justify-between items-start">
+              <div><i class="fas fa-calendar-xmark text-6xl text-amber-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Planned Absences</h3><p class="text-slate-400">Mark future misses</p></div>
+              <div class="text-6xl text-amber-400/20">📅</div>
+            </div>
           </div>
-          <div onclick="showTab(5)" class="bg-slate-800 hover:bg-pink-600/10 rounded-3xl p-8 cursor-pointer card-hover border border-transparent hover:border-pink-400">
-            <div class="flex justify-between"><div><i class="fas fa-trophy text-5xl text-pink-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Meet Results</h3><p class="text-slate-400">Upload times & see graphs</p></div><div class="text-right text-5xl font-bold text-pink-400/30">🏅</div></div>
+          <div onclick="showTab(5)" class="dashboard-card bg-slate-800 hover:bg-pink-600/10 rounded-3xl p-8 cursor-pointer border border-transparent hover:border-pink-400 flex flex-col h-full">
+            <div class="flex justify-between items-start">
+              <div><i class="fas fa-trophy text-6xl text-pink-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Meet Results</h3><p class="text-slate-400">Upload times & see graphs</p></div>
+              <div class="text-6xl text-pink-400/20">🏅</div>
+            </div>
           </div>
         </div>
       </div>
@@ -127,15 +141,32 @@
         <div id="attendance-list" class="space-y-3 px-6"></div>
       </div>
 
-      <!-- TAB 3: Planned Absences -->
+      <!-- TAB 3: PLANNED ABSENCES (NOW FULLY WORKING) -->
       <div id="tab-3" class="hidden">
         <div class="px-6 pt-6">
           <h2 class="text-3xl font-semibold mb-6">Planned Absences</h2>
+
+          <!-- Add new absence form -->
+          <div class="bg-slate-800 rounded-3xl p-6 mb-8">
+            <h3 class="font-medium mb-4">Add Planned Absence</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <select id="absence-swimmer" class="bg-slate-700 rounded-2xl px-5 py-4"></select>
+              <input type="date" id="absence-date" class="bg-slate-700 rounded-2xl px-5 py-4">
+              <input id="absence-reason" type="text" placeholder="Reason (e.g. band concert)" class="bg-slate-700 rounded-2xl px-5 py-4">
+            </div>
+            <button onclick="addPlannedAbsence()" class="mt-6 bg-amber-600 hover:bg-amber-700 px-8 py-4 rounded-2xl flex items-center gap-2">
+              <i class="fas fa-calendar-xmark"></i> Add Absence
+            </button>
+          </div>
+
+          <!-- List of planned absences -->
           <div id="absences-list" class="space-y-4"></div>
         </div>
       </div>
 
-      <!-- TAB 4: Workout Logs -->
+      <!-- TAB 4 & 5 unchanged (Workout Logs & Meet Results) -->
+      <!-- (same as previous version) -->
+
       <div id="tab-4" class="hidden">
         <div class="flex justify-between items-center mb-6 px-6 pt-6">
           <h2 class="text-3xl font-semibold">Workout Logs</h2>
@@ -147,7 +178,6 @@
         <div id="workout-list" class="space-y-3 px-6"></div>
       </div>
 
-      <!-- TAB 5: Meet Results -->
       <div id="tab-5" class="hidden">
         <div class="px-6 pt-6">
           <h2 class="text-3xl font-semibold mb-6">Meet Results</h2>
@@ -175,7 +205,9 @@
     </div>
   </div>
 
-  <!-- Modals -->
+  <!-- All previous modals + new Planned Absence logic is in the script below -->
+  <!-- (Add Swimmer, Workout, Profile modals unchanged) -->
+
   <div id="add-modal" onclick="if(event.target===this)hideModal()" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
     <div onclick="event.stopImmediatePropagation()" class="bg-slate-900 rounded-3xl p-8 w-full max-w-md">
       <h3 class="text-2xl mb-6">Add New Swimmer</h3>
@@ -224,7 +256,7 @@
   <script>
     let swimmers = JSON.parse(localStorage.getItem('swimmers')) || [];
     let attendanceData = JSON.parse(localStorage.getItem('attendance')) || {};
-    let absencesData = JSON.parse(localStorage.getItem('absences')) || {};
+    let absencesData = JSON.parse(localStorage.getItem('absences')) || {};   // date -> array of {id, reason}
     let workoutSets = JSON.parse(localStorage.getItem('workoutSets')) || [];
 
     if (swimmers.length > 0 && !swimmers[0].times) {
@@ -241,7 +273,6 @@
 
     function uid() { return Date.now().toString(36) + Math.random().toString(36).substr(2); }
 
-    // Mobile sidebar toggle
     function toggleMobileSidebar() {
       const sidebar = document.getElementById('sidebar');
       if (sidebar.style.transform === 'translateX(0px)') {
@@ -251,7 +282,144 @@
       }
     }
 
-    // Roster
+    // === PLANNED ABSENCES ===
+    function populateAbsenceSwimmerSelect() {
+      const select = document.getElementById('absence-swimmer');
+      select.innerHTML = '<option value="">Select swimmer...</option>' + 
+        swimmers.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+    }
+
+    function addPlannedAbsence() {
+      const swimmerId = document.getElementById('absence-swimmer').value;
+      const date = document.getElementById('absence-date').value;
+      const reason = document.getElementById('absence-reason').value.trim() || "No reason given";
+
+      if (!swimmerId || !date) {
+        alert("Please select a swimmer and date");
+        return;
+      }
+
+      if (!absencesData[date]) absencesData[date] = [];
+      absencesData[date].push({ id: swimmerId, reason });
+
+      saveData();
+      loadAbsences();
+      alert("Planned absence added!");
+      
+      // Clear form
+      document.getElementById('absence-reason').value = '';
+    }
+
+    function loadAbsences() {
+      const container = document.getElementById('absences-list');
+      const dates = Object.keys(absencesData).sort();
+
+      if (dates.length === 0) {
+        container.innerHTML = `<p class="text-slate-400 text-center py-12">No planned absences yet.<br>Use the form above to add one.</p>`;
+        return;
+      }
+
+      let html = '';
+      dates.forEach(date => {
+        absencesData[date].forEach((abs, index) => {
+          const swimmer = swimmers.find(s => s.id === abs.id);
+          if (!swimmer) return;
+          html += `
+            <div class="bg-slate-800 rounded-3xl p-6 flex justify-between items-center">
+              <div>
+                <div class="text-sm text-slate-400">${new Date(date).toLocaleDateString('long')}</div>
+                <div class="font-medium">${swimmer.name}</div>
+                <div class="text-amber-400 text-sm">${abs.reason}</div>
+              </div>
+              <button onclick="deletePlannedAbsence('${date}', ${index})" class="text-red-400 hover:text-red-500">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>`;
+        });
+      });
+      container.innerHTML = html;
+    }
+
+    function deletePlannedAbsence(date, index) {
+      if (confirm("Remove this planned absence?")) {
+        absencesData[date].splice(index, 1);
+        if (absencesData[date].length === 0) delete absencesData[date];
+        saveData();
+        loadAbsences();
+      }
+    }
+
+    // === UPDATED ATTENDANCE (now shows planned absences) ===
+    function loadAttendance() {
+      const dateInput = document.getElementById('attendance-date');
+      if (!dateInput.value) dateInput.value = new Date().toISOString().split('T')[0];
+      const date = dateInput.value;
+      
+      const container = document.getElementById('attendance-list');
+      const dayData = attendanceData[date] || { present: [] };
+      const plannedToday = absencesData[date] || [];
+
+      let html = '';
+      swimmers.forEach(swimmer => {
+        const isPresent = dayData.present.includes(swimmer.id);
+        const planned = plannedToday.find(p => p.id === swimmer.id);
+
+        if (planned) {
+          html += `
+            <div onclick="togglePresent('${date}', '${swimmer.id}')" 
+                 class="flex items-center justify-between bg-slate-800 hover:bg-slate-700 rounded-3xl p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="bg-amber-400 w-8 h-8 rounded-2xl flex items-center justify-center text-xl text-slate-900">📅</div>
+                <div>
+                  <div class="font-medium">${swimmer.name}</div>
+                  <div class="text-amber-400 text-sm">Planned absent – ${planned.reason}</div>
+                </div>
+              </div>
+              <div class="text-sm text-slate-400">PLANNED</div>
+            </div>`;
+        } else {
+          html += `
+            <div onclick="togglePresent('${date}', '${swimmer.id}')" 
+                 class="flex items-center justify-between bg-slate-800 hover:bg-slate-700 rounded-3xl p-6 cursor-pointer">
+              <div class="flex items-center gap-4">
+                <div class="${isPresent ? 'bg-green-500' : 'bg-slate-600'} w-8 h-8 rounded-2xl flex items-center justify-center text-xl">
+                  ${isPresent ? '✓' : ''}
+                </div>
+                <div class="font-medium">${swimmer.name}</div>
+              </div>
+              <div class="text-sm text-slate-400">${isPresent ? 'HERE' : 'absent'}</div>
+            </div>`;
+        }
+      });
+      container.innerHTML = html || '<p class="text-slate-400">Add swimmers first.</p>';
+    }
+
+    function togglePresent(date, id) {
+      if (!attendanceData[date]) attendanceData[date] = { present: [] };
+      const list = attendanceData[date].present;
+      if (list.includes(id)) list.splice(list.indexOf(id), 1);
+      else list.push(id);
+      saveData();
+      loadAttendance();
+    }
+
+    function markAllPresent() {
+      const date = document.getElementById('attendance-date').value;
+      attendanceData[date] = { present: swimmers.map(s => s.id) };
+      saveData();
+      loadAttendance();
+    }
+
+    function markAllAbsent() {
+      const date = document.getElementById('attendance-date').value;
+      attendanceData[date] = { present: [] };
+      saveData();
+      loadAttendance();
+    }
+
+    // Rest of the script (roster, workouts, meet results, etc.) is unchanged
+    // (same as previous full version)
+
     function renderRoster() {
       const container = document.getElementById('roster-list');
       if (swimmers.length === 0) {
@@ -312,7 +480,6 @@
       });
     }
 
-    // Add Swimmer
     function showAddSwimmerModal() { document.getElementById('add-modal').classList.remove('hidden'); document.getElementById('new-name').focus(); }
     function hideModal() {
       document.getElementById('add-modal').classList.add('hidden');
@@ -329,44 +496,6 @@
       hideModal();
     }
 
-    // Attendance
-    function loadAttendance() {
-      const dateInput = document.getElementById('attendance-date');
-      if (!dateInput.value) dateInput.value = new Date().toISOString().split('T')[0];
-      const date = dateInput.value;
-      const container = document.getElementById('attendance-list');
-      const dayData = attendanceData[date] || { present: [] };
-      let html = '';
-      swimmers.forEach(s => {
-        const isPresent = dayData.present.includes(s.id);
-        html += `<div onclick="togglePresent('${date}', '${s.id}')" class="flex justify-between bg-slate-800 hover:bg-slate-700 rounded-3xl p-6 cursor-pointer">
-          <div class="flex items-center gap-4"><div class="${isPresent ? 'bg-green-500' : 'bg-slate-600'} w-8 h-8 rounded-2xl flex items-center justify-center text-xl">${isPresent ? '✓' : ''}</div><div class="font-medium">${s.name}</div></div>
-          <div class="text-sm text-slate-400">${isPresent ? 'HERE' : 'absent'}</div>
-        </div>`;
-      });
-      container.innerHTML = html || '<p class="text-slate-400">Add swimmers first.</p>';
-    }
-    function togglePresent(date, id) {
-      if (!attendanceData[date]) attendanceData[date] = { present: [] };
-      const list = attendanceData[date].present;
-      if (list.includes(id)) list.splice(list.indexOf(id), 1); else list.push(id);
-      saveData();
-      loadAttendance();
-    }
-    function markAllPresent() {
-      const date = document.getElementById('attendance-date').value;
-      attendanceData[date] = { present: swimmers.map(s => s.id) };
-      saveData();
-      loadAttendance();
-    }
-    function markAllAbsent() {
-      const date = document.getElementById('attendance-date').value;
-      attendanceData[date] = { present: [] };
-      saveData();
-      loadAttendance();
-    }
-
-    // Workout Logs
     const categories = ["Warm-up","Pre-set","Kick","IM","Sprint","Pull","General","Distance","Cool-down"];
     function renderCategoryPills() {
       const container = document.getElementById('category-pills');
@@ -412,7 +541,6 @@
       }
     }
 
-    // Meet Results
     function handleCSVUpload(e) {
       const file = e.target.files[0];
       if (!file) return;
@@ -469,7 +597,6 @@
       document.getElementById('manual-time').value = '';
     }
 
-    // Tab navigation
     function showTab(n) {
       document.querySelectorAll('#main-content > div').forEach(d => d.classList.add('hidden'));
       document.getElementById(`tab-${n}`).classList.remove('hidden');
@@ -478,6 +605,7 @@
 
       if (n === 1) renderRoster();
       if (n === 2) loadAttendance();
+      if (n === 3) { populateAbsenceSwimmerSelect(); loadAbsences(); }
       if (n === 4) { renderCategoryPills(); renderWorkoutList(); }
       if (n === 5) populateManualSwimmerSelect();
     }
@@ -492,7 +620,6 @@
       a.click();
     }
 
-    // Init
     window.onload = () => {
       renderRoster();
       showTab(0);
