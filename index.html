@@ -68,60 +68,22 @@
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
           <div onclick="showTab(2)" class="bg-slate-800 hover:bg-blue-600/10 rounded-3xl p-8 cursor-pointer card-hover border border-transparent hover:border-blue-400">
-            <div class="flex justify-between">
-              <div>
-                <i class="fas fa-clipboard-check text-5xl text-blue-400 mb-6"></i>
-                <h3 class="text-3xl font-semibold mb-1">Attendance</h3>
-                <p class="text-slate-400">Mark who showed up today</p>
-              </div>
-              <div class="text-right text-5xl font-bold text-blue-400/30">🏊</div>
-            </div>
+            <div class="flex justify-between"><div><i class="fas fa-clipboard-check text-5xl text-blue-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Attendance</h3><p class="text-slate-400">Mark who showed up today</p></div><div class="text-right text-5xl font-bold text-blue-400/30">🏊</div></div>
           </div>
           <div onclick="showTab(1)" class="bg-slate-800 hover:bg-emerald-600/10 rounded-3xl p-8 cursor-pointer card-hover border border-transparent hover:border-emerald-400">
-            <div class="flex justify-between">
-              <div>
-                <i class="fas fa-users text-5xl text-emerald-400 mb-6"></i>
-                <h3 class="text-3xl font-semibold mb-1">Roster</h3>
-                <p class="text-slate-400">Add swimmers & view profiles</p>
-              </div>
-              <div class="text-right text-5xl font-bold text-emerald-400/30">📋</div>
-            </div>
+            <div class="flex justify-between"><div><i class="fas fa-users text-5xl text-emerald-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Roster</h3><p class="text-slate-400">Add swimmers & view profiles</p></div><div class="text-right text-5xl font-bold text-emerald-400/30">📋</div></div>
           </div>
           <div onclick="showTab(4)" class="bg-slate-800 hover:bg-purple-600/10 rounded-3xl p-8 cursor-pointer card-hover border border-transparent hover:border-purple-400">
-            <div class="flex justify-between">
-              <div>
-                <i class="fas fa-dumbbell text-5xl text-purple-400 mb-6"></i>
-                <h3 class="text-3xl font-semibold mb-1">Workout Logs</h3>
-                <p class="text-slate-400">Warm-ups, kick, sprint, IM, etc.</p>
-              </div>
-              <div class="text-right text-5xl font-bold text-purple-400/30">🏋️</div>
-            </div>
+            <div class="flex justify-between"><div><i class="fas fa-dumbbell text-5xl text-purple-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Workout Logs</h3><p class="text-slate-400">Warm-ups, kick, sprint, IM, etc.</p></div><div class="text-right text-5xl font-bold text-purple-400/30">🏋️</div></div>
           </div>
           <div onclick="showTab(3)" class="bg-slate-800 hover:bg-amber-600/10 rounded-3xl p-8 cursor-pointer card-hover border border-transparent hover:border-amber-400">
-            <div class="flex justify-between">
-              <div>
-                <i class="fas fa-calendar-xmark text-5xl text-amber-400 mb-6"></i>
-                <h3 class="text-3xl font-semibold mb-1">Planned Absences</h3>
-                <p class="text-slate-400">Mark future misses</p>
-              </div>
-              <div class="text-right text-5xl font-bold text-amber-400/30">📅</div>
-            </div>
+            <div class="flex justify-between"><div><i class="fas fa-calendar-xmark text-5xl text-amber-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Planned Absences</h3><p class="text-slate-400">Mark future misses</p></div><div class="text-right text-5xl font-bold text-amber-400/30">📅</div></div>
           </div>
           <div onclick="showTab(5)" class="bg-slate-800 hover:bg-pink-600/10 rounded-3xl p-8 cursor-pointer card-hover border border-transparent hover:border-pink-400">
-            <div class="flex justify-between">
-              <div>
-                <i class="fas fa-trophy text-5xl text-pink-400 mb-6"></i>
-                <h3 class="text-3xl font-semibold mb-1">Meet Results</h3>
-                <p class="text-slate-400">Upload times & see progress graphs</p>
-              </div>
-              <div class="text-right text-5xl font-bold text-pink-400/30">🏅</div>
-            </div>
+            <div class="flex justify-between"><div><i class="fas fa-trophy text-5xl text-pink-400 mb-6"></i><h3 class="text-3xl font-semibold mb-1">Meet Results</h3><p class="text-slate-400">Upload times & see progress graphs</p></div><div class="text-right text-5xl font-bold text-pink-400/30">🏅</div></div>
           </div>
         </div>
       </div>
-
-      <!-- All other tabs (Roster, Attendance, etc.) are fully included in this code -->
-      <!-- (The rest of the code is the same as the previous full version I gave you) -->
 
       <!-- TAB 1: Roster -->
       <div id="tab-1" class="hidden">
@@ -174,8 +136,7 @@
           <p class="text-slate-400 mb-4">Upload CSV or add times manually</p>
           <div class="flex items-center gap-4 mb-8">
             <label class="bg-slate-700 hover:bg-slate-600 px-6 py-4 rounded-2xl cursor-pointer flex items-center gap-3">
-              <i class="fas fa-upload"></i>
-              <span>Upload Meet CSV</span>
+              <i class="fas fa-upload"></i><span>Upload Meet CSV</span>
               <input type="file" id="csv-upload" accept=".csv" class="hidden" onchange="handleCSVUpload(event)">
             </label>
           </div>
@@ -194,10 +155,352 @@
     </div>
   </div>
 
-  <!-- Modals and full script are included below (same as last full version) -->
-  <!-- [The rest of the code (modals + full JavaScript) is exactly the same as the complete file I gave you last time. Paste the entire thing I sent previously.] -->
+  <!-- Add Swimmer Modal -->
+  <div id="add-modal" onclick="if(event.target===this)hideModal()" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+    <div onclick="event.stopImmediatePropagation()" class="bg-slate-900 rounded-3xl p-8 w-full max-w-md">
+      <h3 class="text-2xl mb-6">Add New Swimmer</h3>
+      <input id="new-name" type="text" placeholder="Swimmer name" class="w-full bg-slate-800 rounded-2xl px-5 py-4 text-lg mb-4">
+      <input id="new-group" type="text" placeholder="Group (optional)" class="w-full bg-slate-800 rounded-2xl px-5 py-4 text-lg mb-8">
+      <div class="flex gap-4">
+        <button onclick="hideModal()" class="flex-1 py-4 rounded-2xl border border-slate-700">Cancel</button>
+        <button onclick="addSwimmer()" class="flex-1 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700">Add Swimmer</button>
+      </div>
+    </div>
+  </div>
 
-  <!-- (To keep this message from being 400 lines long, I’m confirming this is the full working version with every feature we’ve built so far.) -->
+  <!-- Add Workout Modal -->
+  <div id="workout-modal" onclick="if(event.target===this)hideWorkoutModal()" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+    <div onclick="event.stopImmediatePropagation()" class="bg-slate-900 rounded-3xl p-8 w-full max-w-lg">
+      <h3 class="text-2xl mb-6">Add Workout Set</h3>
+      <select id="workout-category" class="w-full bg-slate-800 rounded-2xl px-5 py-4 text-lg mb-4">
+        <option value="Warm-up">Warm-up</option>
+        <option value="Pre-set">Pre-set</option>
+        <option value="Kick">Kick</option>
+        <option value="IM">IM</option>
+        <option value="Sprint">Sprint</option>
+        <option value="Pull">Pull</option>
+        <option value="General">General</option>
+        <option value="Distance">Distance</option>
+        <option value="Cool-down">Cool-down</option>
+      </select>
+      <textarea id="workout-desc" rows="3" placeholder="Enter the set here&#10;e.g. 8x50 @ :45 build" class="w-full bg-slate-800 rounded-2xl px-5 py-4 text-lg resize-none"></textarea>
+      <div class="flex gap-4 mt-8">
+        <button onclick="hideWorkoutModal()" class="flex-1 py-4 rounded-2xl border border-slate-700">Cancel</button>
+        <button onclick="addWorkoutSet()" class="flex-1 py-4 rounded-2xl bg-purple-600 hover:bg-purple-700">Save Set</button>
+      </div>
+    </div>
+  </div>
 
+  <!-- Swimmer Profile Modal -->
+  <div id="profile-modal" onclick="if(event.target===this)hideProfileModal()" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+    <div onclick="event.stopImmediatePropagation()" class="bg-slate-900 w-full max-w-4xl mx-4 rounded-3xl p-8 max-h-[90vh] overflow-auto">
+      <div class="flex justify-between items-start mb-6">
+        <div id="profile-header" class="text-3xl font-semibold"></div>
+        <button onclick="hideProfileModal()" class="text-slate-400 hover:text-white text-3xl">×</button>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-medium mb-3">All Times This Season</h3>
+          <div id="profile-times-list" class="space-y-3 max-h-96 overflow-auto"></div>
+        </div>
+        <div>
+          <h3 class="font-medium mb-3">Progress Trends</h3>
+          <canvas id="progress-chart" class="w-full h-80"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let swimmers = JSON.parse(localStorage.getItem('swimmers')) || [];
+    let attendanceData = JSON.parse(localStorage.getItem('attendance')) || {};
+    let absencesData = JSON.parse(localStorage.getItem('absences')) || {};
+    let workoutSets = JSON.parse(localStorage.getItem('workoutSets')) || [];
+
+    if (swimmers.length > 0 && !swimmers[0].times) {
+      swimmers.forEach(s => s.times = []);
+      localStorage.setItem('swimmers', JSON.stringify(swimmers));
+    }
+
+    function saveData() {
+      localStorage.setItem('swimmers', JSON.stringify(swimmers));
+      localStorage.setItem('attendance', JSON.stringify(attendanceData));
+      localStorage.setItem('absences', JSON.stringify(absencesData));
+      localStorage.setItem('workoutSets', JSON.stringify(workoutSets));
+    }
+
+    function uid() { return Date.now().toString(36) + Math.random().toString(36).substr(2); }
+
+    // Roster
+    function renderRoster() {
+      const container = document.getElementById('roster-list');
+      if (swimmers.length === 0) {
+        container.innerHTML = `<p class="text-slate-400 text-center py-12">No swimmers yet. Add some first!</p>`;
+        return;
+      }
+      container.innerHTML = swimmers.map(s => `
+        <div onclick="openSwimmerProfile('${s.id}')" class="bg-slate-800 hover:bg-slate-700 rounded-3xl p-6 flex justify-between items-center cursor-pointer">
+          <div>
+            <div class="font-semibold text-xl">${s.name}</div>
+            ${s.group ? `<div class="text-blue-400 text-sm">${s.group}</div>` : ''}
+          </div>
+          <div class="text-xs bg-slate-700 px-3 py-1 rounded-2xl">${s.times ? s.times.length : 0} times</div>
+        </div>
+      `).join('');
+    }
+
+    let currentSwimmerId = null;
+    let currentChart = null;
+
+    function openSwimmerProfile(id) {
+      currentSwimmerId = id;
+      const swimmer = swimmers.find(s => s.id === id);
+      if (!swimmer) return;
+
+      document.getElementById('profile-header').innerHTML = `${swimmer.name} ${swimmer.group ? `<span class="text-blue-400 text-2xl ml-3">${swimmer.group}</span>` : ''}`;
+
+      const listEl = document.getElementById('profile-times-list');
+      if (!swimmer.times || swimmer.times.length === 0) {
+        listEl.innerHTML = `<p class="text-slate-400">No times logged yet.</p>`;
+      } else {
+        listEl.innerHTML = swimmer.times.sort((a,b) => new Date(b.date) - new Date(a.date)).map(t => `
+          <div class="flex justify-between bg-slate-800 rounded-2xl px-5 py-4">
+            <div><div class="font-medium">${t.event}</div><div class="text-xs text-slate-400">${new Date(t.date).toLocaleDateString()}</div></div>
+            <div class="text-right"><div class="text-2xl font-mono">${t.time}</div></div>
+          </div>
+        `).join('');
+      }
+
+      document.getElementById('profile-modal').classList.remove('hidden');
+      renderProgressChart(swimmer);
+    }
+
+    function hideProfileModal() {
+      document.getElementById('profile-modal').classList.add('hidden');
+      if (currentChart) currentChart.destroy();
+      currentSwimmerId = null;
+    }
+
+    function renderProgressChart(swimmer) {
+      const ctx = document.getElementById('progress-chart');
+      if (currentChart) currentChart.destroy();
+
+      const sorted = [...swimmer.times].sort((a,b) => new Date(a.date) - new Date(b.date));
+      if (sorted.length < 2) return;
+
+      const labels = sorted.map(t => new Date(t.date).toLocaleDateString('short'));
+      const timesInSec = sorted.map(t => {
+        const parts = t.time.split(':').map(Number);
+        return parts.length === 2 ? parts[0]*60 + parts[1] : parts[0];
+      });
+
+      currentChart = new Chart(ctx, {
+        type: 'line',
+        data: { labels, datasets: [{ label: 'Time (sec)', data: timesInSec, borderColor: '#60a5fa', tension: 0.3 }] },
+        options: { responsive: true, scales: { y: { reverse: true } } }
+      });
+    }
+
+    // Add Swimmer
+    function showAddSwimmerModal() {
+      document.getElementById('add-modal').classList.remove('hidden');
+      document.getElementById('new-name').focus();
+    }
+    function hideModal() {
+      document.getElementById('add-modal').classList.add('hidden');
+      document.getElementById('new-name').value = '';
+      document.getElementById('new-group').value = '';
+    }
+    function addSwimmer() {
+      const name = document.getElementById('new-name').value.trim();
+      const group = document.getElementById('new-group').value.trim();
+      if (!name) return alert("Name required");
+      swimmers.push({ id: uid(), name, group: group || undefined, times: [] });
+      saveData();
+      renderRoster();
+      hideModal();
+    }
+
+    // Attendance
+    function loadAttendance() {
+      const dateInput = document.getElementById('attendance-date');
+      if (!dateInput.value) dateInput.value = new Date().toISOString().split('T')[0];
+      const date = dateInput.value;
+      const container = document.getElementById('attendance-list');
+      const dayData = attendanceData[date] || { present: [] };
+      let html = '';
+      swimmers.forEach(s => {
+        const isPresent = dayData.present.includes(s.id);
+        html += `<div onclick="togglePresent('${date}', '${s.id}')" class="flex justify-between bg-slate-800 hover:bg-slate-700 rounded-3xl p-6 cursor-pointer">
+          <div class="flex items-center gap-4">
+            <div class="${isPresent ? 'bg-green-500' : 'bg-slate-600'} w-8 h-8 rounded-2xl flex items-center justify-center text-xl">${isPresent ? '✓' : ''}</div>
+            <div><div class="font-medium">${s.name}</div></div>
+          </div>
+          <div class="text-sm text-slate-400">${isPresent ? 'HERE' : 'absent'}</div>
+        </div>`;
+      });
+      container.innerHTML = html || '<p class="text-slate-400">Add swimmers first.</p>';
+    }
+    function togglePresent(date, id) {
+      if (!attendanceData[date]) attendanceData[date] = { present: [] };
+      const list = attendanceData[date].present;
+      if (list.includes(id)) list.splice(list.indexOf(id), 1);
+      else list.push(id);
+      saveData();
+      loadAttendance();
+    }
+    function markAllPresent() {
+      const date = document.getElementById('attendance-date').value;
+      attendanceData[date] = { present: swimmers.map(s => s.id) };
+      saveData();
+      loadAttendance();
+    }
+    function markAllAbsent() {
+      const date = document.getElementById('attendance-date').value;
+      attendanceData[date] = { present: [] };
+      saveData();
+      loadAttendance();
+    }
+
+    // Workout Logs
+    const categories = ["Warm-up","Pre-set","Kick","IM","Sprint","Pull","General","Distance","Cool-down"];
+    function renderCategoryPills() {
+      const container = document.getElementById('category-pills');
+      let html = `<button onclick="filterWorkouts(null)" class="px-5 py-2 rounded-3xl text-sm font-medium bg-slate-700 hover:bg-slate-600">All Sets</button>`;
+      categories.forEach(cat => html += `<button onclick="filterWorkouts('${cat}')" class="px-5 py-2 rounded-3xl text-sm font-medium bg-slate-700 hover:bg-slate-600">${cat}</button>`);
+      container.innerHTML = html;
+    }
+    let currentFilter = null;
+    function filterWorkouts(cat) {
+      currentFilter = cat;
+      renderWorkoutList();
+    }
+    function renderWorkoutList() {
+      const container = document.getElementById('workout-list');
+      const filtered = currentFilter ? workoutSets.filter(s => s.category === currentFilter) : workoutSets;
+      if (filtered.length === 0) {
+        container.innerHTML = `<p class="text-slate-400 text-center py-12">No sets yet. Tap "Add New Set".</p>`;
+        return;
+      }
+      container.innerHTML = filtered.map(set => `
+        <div class="bg-slate-800 rounded-3xl p-6 flex justify-between">
+          <div>
+            <span class="inline-block px-3 py-1 text-xs font-medium bg-purple-900 text-purple-300 rounded-2xl mb-2">${set.category}</span>
+            <div class="font-medium">${set.description}</div>
+          </div>
+          <button onclick="deleteWorkoutSet('${set.id}')" class="text-red-400"><i class="fas fa-trash"></i></button>
+        </div>
+      `).join('');
+    }
+    function showAddWorkoutModal() {
+      document.getElementById('workout-modal').classList.remove('hidden');
+    }
+    function hideWorkoutModal() {
+      document.getElementById('workout-modal').classList.add('hidden');
+      document.getElementById('workout-desc').value = '';
+    }
+    function addWorkoutSet() {
+      const category = document.getElementById('workout-category').value;
+      const description = document.getElementById('workout-desc').value.trim();
+      if (!description) return alert("Enter a set");
+      workoutSets.unshift({ id: uid(), category, description, createdAt: new Date().toISOString() });
+      saveData();
+      hideWorkoutModal();
+      renderWorkoutList();
+    }
+    function deleteWorkoutSet(id) {
+      if (confirm("Delete set?")) {
+        workoutSets = workoutSets.filter(s => s.id !== id);
+        saveData();
+        renderWorkoutList();
+      }
+    }
+
+    // Meet Results
+    function handleCSVUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        const csv = ev.target.result;
+        const rows = csv.trim().split('\n').map(r => r.split(',').map(c => c.trim().replace(/"/g,'')));
+        const headers = rows[0].map(h => h.toLowerCase());
+        let added = 0;
+        for (let i = 1; i < rows.length; i++) {
+          const row = rows[i];
+          if (row.length < 3) continue;
+          const nameIdx = headers.findIndex(h => h.includes('name'));
+          const eventIdx = headers.findIndex(h => h.includes('event'));
+          const timeIdx = headers.findIndex(h => h.includes('time'));
+          const dateIdx = headers.findIndex(h => h.includes('date'));
+          const name = row[nameIdx];
+          const event = row[eventIdx];
+          const time = row[timeIdx];
+          const date = dateIdx > -1 ? row[dateIdx] : new Date().toISOString().split('T')[0];
+          const swimmer = swimmers.find(s => s.name.toLowerCase() === name.toLowerCase());
+          if (swimmer) {
+            if (!swimmer.times) swimmer.times = [];
+            swimmer.times.push({ id: uid(), event, time, date, meet: file.name });
+            added++;
+          }
+        }
+        saveData();
+        alert(`Added ${added} times!`);
+        renderRoster();
+        e.target.value = '';
+      };
+      reader.readAsText(file);
+    }
+
+    function populateManualSwimmerSelect() {
+      const select = document.getElementById('manual-swimmer');
+      select.innerHTML = '<option value="">Select swimmer...</option>' + swimmers.map(s => `<option value="${s.id}">${s.name}</option>`).join('');
+    }
+
+    function addManualTime() {
+      const id = document.getElementById('manual-swimmer').value;
+      const event = document.getElementById('manual-event').value.trim();
+      const time = document.getElementById('manual-time').value.trim();
+      const date = document.getElementById('manual-date').value;
+      if (!id || !event || !time || !date) return alert("Fill all fields");
+      const swimmer = swimmers.find(s => s.id === id);
+      if (!swimmer.times) swimmer.times = [];
+      swimmer.times.push({ id: uid(), event, time, date, meet: "Manual" });
+      saveData();
+      alert("Time saved!");
+      renderRoster();
+      document.getElementById('manual-event').value = '';
+      document.getElementById('manual-time').value = '';
+    }
+
+    // Tab navigation
+    function showTab(n) {
+      document.querySelectorAll('#main-content > div').forEach(d => d.classList.add('hidden'));
+      document.getElementById(`tab-${n}`).classList.remove('hidden');
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('nav-active'));
+      document.getElementById(`nav-${n}`).classList.add('nav-active');
+
+      if (n === 1) renderRoster();
+      if (n === 2) loadAttendance();
+      if (n === 4) { renderCategoryPills(); renderWorkoutList(); }
+      if (n === 5) populateManualSwimmerSelect();
+    }
+
+    function exportData() {
+      const data = { swimmers, attendanceData, absencesData, workoutSets, exportedAt: new Date().toISOString() };
+      const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `swim-tracker-backup-${new Date().toISOString().slice(0,10)}.json`;
+      a.click();
+    }
+
+    // Init
+    window.onload = () => {
+      renderRoster();
+      showTab(0);
+    };
+  </script>
 </body>
 </html>
